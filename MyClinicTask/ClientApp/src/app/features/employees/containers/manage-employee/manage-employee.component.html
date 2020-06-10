@@ -1,0 +1,100 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="d-flex flex-column flex-md-row flex-wrap row">
+        <div class="form-group col-md-6">
+            <div class="row">
+                <label class="col-12 col-md-4 my-0 text-left text-md-right mb-2 mb-md-0 required">First Name</label>
+                <div class="col-12 col-md-8">
+                    <input formControlName="firstName" type="text" class="form-control" placeholder="Enter First Name">
+                    <app-validation-message [control]="firstName"></app-validation-message>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="row">
+                <label class="col-12 col-md-4 my-0 text-left text-md-right mb-2 mb-md-0">Middle Name</label>
+                <div class="col-12 col-md-8">
+                    <input formControlName="middleName" type="text" class="form-control"
+                        placeholder="Enter Middle Name">
+                    <app-validation-message [control]="middleName"></app-validation-message>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="row">
+                <label class="col-12 col-md-4 my-0 text-left text-md-right mb-2 mb-md-0 required">Last Name</label>
+                <div class="col-12 col-md-8">
+                    <input formControlName="lastName" type="text" class="form-control" placeholder="Enter Last Name">
+                    <app-validation-message [control]="lastName"></app-validation-message>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="row">
+                <label class="col-12 col-md-4 my-0 text-left text-md-right mb-2 mb-md-0 required">Date of Birth</label>
+                <div class="col-12 col-md-8">
+                    <mat-form-field class="form-control">
+                        <input class="form-control" matInput formControlName="dateOfBirth" [matDatepicker]="picker"
+                            class="h-100">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <app-validation-message [control]="dateOfBirth"></app-validation-message>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="row">
+                <label class="col-12 col-md-4 my-0 text-left text-md-right mb-2 mb-md-0 required">Nationality</label>
+                <div class="col-12 col-md-8">
+                    <select formControlName="nationalityId" class="form-control">
+                        <option value="">Select Nationality</option>
+                        <option *ngFor="let n of nationalities" [value]="n.id">{{n.name}}</option>
+                    </select>
+                    <app-validation-message [control]="nationality"></app-validation-message>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="row">
+                <label class="col-12 col-md-4 my-0 text-left text-md-right mb-2 mb-md-0 required">Position</label>
+                <div class="col-12 col-md-8">
+                    <select formControlName="positionId" class="form-control">
+                        <option value="">Select Position</option>
+                        <option *ngFor="let p of positions" [value]="p.id">{{p.title}}</option>
+                    </select>
+                    <app-validation-message [control]="position"></app-validation-message>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="row">
+                <label class="col-12 col-md-4 my-0 text-left text-md-right mb-2 mb-md-0 required">Salary</label>
+                <div class="col-12 col-md-8">
+                    <input formControlName="salary" type="number" class="form-control" placeholder="Enter Salary">
+                    <app-validation-message [control]="salary"></app-validation-message>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column flex-md-row flex-wrap row">
+        <div class="form-group col-12">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-2">
+                    <hr class="w-100" />
+                    <button type="submit" class="btn btn-primary form-group col-12 col-md-auto">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <i class="material-icons mr-2">done</i>
+                            <span>Save</span>
+                        </div>
+                    </button>
+                    <button type="button" class="btn btn-secondary form-group col-12 col-md-auto ml-md-2">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <i class="material-icons mr-2">not_interested</i>
+                            <span>Cancel</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

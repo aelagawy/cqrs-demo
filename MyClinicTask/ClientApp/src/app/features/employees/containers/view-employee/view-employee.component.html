@@ -1,0 +1,13 @@
+<mat-card-title>Employee Details</mat-card-title>
+<hr>
+<div *ngIf="dto">
+    <ul>
+        <li>First Name: <strong>{{dto.firstName}}</strong></li>
+        <li *ngIf="dto.middleName">Middle Name: <strong>{{dto.middleName}}</strong></li>
+        <li>Last Name: <strong>{{dto.lastName}}</strong></li>
+        <li>Date Of Birth: <strong>{{dto.dateOfBirth | date:'dd/MM/yyyy'}}</strong></li>
+        <li>Nationality: <strong>{{dto.nationality.name}}</strong></li>
+        <li>Position: <strong>{{dto.position.title}}</strong></li>
+        <li>Salary: <strong>{{dto.salary}} USD</strong></li>
+    </ul>
+</div>

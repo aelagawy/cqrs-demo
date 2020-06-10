@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.1) !important;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+}
+
+.loading-shade.mat-spinner circle {
+  stroke: #007bff;
+}
+
+mat-form-field:not(.mat-default) .mat-form-field-infix {
+  border-top: 0;
+  padding: .25em 0!important;
+}
+
+mat-form-field:not(.mat-default) * {
+  background-color: transparent!important;
+}
